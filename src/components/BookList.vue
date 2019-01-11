@@ -1,6 +1,8 @@
 <template>
-  <div class="avenir dark-gray pa4 f3 f4-ns fw4">
-    <h1>Books</h1>
+  <div class="avenir pa2-ns f3 f4-ns fw3">
+    <header class="tc ph4">
+      <h1 class="fw2 black-90 mv3">Reading list</h1>
+    </header>
     <div v-if="store.state.books.isFetching">
       Loading...
     </div>
@@ -8,9 +10,9 @@
       Error while fetching book data.
     </div>
     <div v-if="store.state.books.isLoaded">
-      <ul class="pl0 list flex flex-column items-start">
+      <section class="cf w-100">
         <BookListItem v-for="book in store.state.books.data" v-bind="book" v-bind:key="book.id"/>
-      </ul>
+      </section>
     </div>
   </div>
 </template>
