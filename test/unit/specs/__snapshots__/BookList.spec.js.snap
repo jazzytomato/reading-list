@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookList.vue renders empty component 1`] = `
+<div
+  class="avenir dark-gray pa4 f3 f4-ns fw4"
+>
+  <h1>
+    Books
+  </h1>
+   
+  <!---->
+   
+  <!---->
+   
+  <div>
+    <ul
+      class="pl0 list flex flex-column items-start"
+    />
+  </div>
+</div>
+`;
