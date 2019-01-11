@@ -1,6 +1,6 @@
 // const BooksURL = 'https://priceless-mestorf-883378.netlify.com/fe-data-2.json'
 // cross origin requests not allowed on the given url
-const BooksURL = 'http://www.mocky.io/v2/5c30dff23000006800e77ace'
+export const BooksURL = 'http://www.mocky.io/v2/5c30dff23000006800e77ace'
 
 export const store = {
   state: {

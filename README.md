@@ -7,6 +7,8 @@
 
 - I used Tachyons for fast css prototyping
 
+- I wrote some e2e and unit tests but ran out of time, so it is not well tested
+
 ## Build Setup
 
 ``` bash
@@ -24,6 +26,9 @@ npm run build --report
 
 # run unit tests
 npm run unit
+
+# update jest snapshots
+npm run unit -- -u
 
 # run e2e tests
 npm run e2e

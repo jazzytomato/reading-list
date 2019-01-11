@@ -11,7 +11,16 @@ module.exports = {
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.containsText('h1', 'Books')
+      .assert.visible('.loader')
+      .assert.containsText('h1', 'Reading list')
+      .waitForElementVisible('article', 5000)
+      .click('article a')
+      .waitForElementVisible('#book', 1000)
+      .assert.containsText('p', 'ISBN')
+      .assert.containsText('a', 'Back to the list')
+      .click('#book a')
+      .waitForElementVisible('h1', 1000)
+      .assert.containsText('h1', 'Reading list')
       .end()
   }
 }

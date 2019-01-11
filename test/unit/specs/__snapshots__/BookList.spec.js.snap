@@ -1,20 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BookList.vue renders empty component 1`] = `
+exports[`BookList.vue When fetching data renders the loader 1`] = `
 <div
-  class="avenir dark-gray pa4 f3 f4-ns fw4"
+  class="avenir pa2-ns f3 f4-ns fw3"
 >
-  <h1>
-    Books
-  </h1>
+  <header
+    class="tc ph4"
+  >
+    <h1
+      class="fw2 black-90 mv3"
+    >
+      Reading list
+    </h1>
+  </header>
+   
+  <div>
+    <div
+      class="flex flex-column justify-center items-center"
+    >
+      <loader-stub />
+    </div>
+  </div>
+   
+  <!---->
+   
+  <div>
+    <section
+      class="cf w-100"
+    />
+  </div>
+</div>
+`;
+
+exports[`BookList.vue With an error fetching data renders the error message 1`] = `
+<div
+  class="avenir pa2-ns f3 f4-ns fw3"
+>
+  <header
+    class="tc ph4"
+  >
+    <h1
+      class="fw2 black-90 mv3"
+    >
+      Reading list
+    </h1>
+  </header>
+   
+  <!---->
+   
+  <div>
+    
+    Error while fetching book data.
+  
+  </div>
+   
+  <div>
+    <section
+      class="cf w-100"
+    />
+  </div>
+</div>
+`;
+
+exports[`BookList.vue With books renders the books 1`] = `
+<div
+  class="avenir pa2-ns f3 f4-ns fw3"
+>
+  <header
+    class="tc ph4"
+  >
+    <h1
+      class="fw2 black-90 mv3"
+    >
+      Reading list
+    </h1>
+  </header>
    
   <!---->
    
   <!---->
    
   <div>
-    <ul
-      class="pl0 list flex flex-column items-start"
+    <section
+      class="cf w-100"
+    >
+      <booklistitem-stub
+        author="Author 1"
+        cover="https://img_url"
+        id="guid-1"
+        title="Book 1"
+      />
+      <booklistitem-stub
+        author="Author 2"
+        cover="https://img_url2"
+        id="guid-2"
+        title="Book 2"
+      />
+      <booklistitem-stub
+        author="Author 3"
+        cover="https://img_url3"
+        id="guid-3"
+        title="Book 3"
+      />
+    </section>
+  </div>
+</div>
+`;
+
+exports[`BookList.vue With no books renders empty component 1`] = `
+<div
+  class="avenir pa2-ns f3 f4-ns fw3"
+>
+  <header
+    class="tc ph4"
+  >
+    <h1
+      class="fw2 black-90 mv3"
+    >
+      Reading list
+    </h1>
+  </header>
+   
+  <!---->
+   
+  <!---->
+   
+  <div>
+    <section
+      class="cf w-100"
     />
   </div>
 </div>
