@@ -4,7 +4,9 @@
       <h1 class="fw2 black-90 mv3">Reading list</h1>
     </header>
     <div v-if="store.state.books.isFetching">
-      Loading...
+      <div class="flex flex-column justify-center items-center">
+        <Loader/>
+      </div>
     </div>
     <div v-if="store.state.books.isError">
       Error while fetching book data.
@@ -19,6 +21,7 @@
 
 <script>
 import { store } from '@/store.js'
+import Loader from '@/components/Loader'
 import BookListItem from '@/components/BookListItem'
 
 export default {
@@ -29,6 +32,6 @@ export default {
   mounted: () => {
     store.fetchBooksIfNeeded()
   },
-  components: {BookListItem}
+  components: {BookListItem, Loader}
 }
 </script>

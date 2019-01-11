@@ -13,7 +13,7 @@ export const store = {
   },
   fetchBooksIfNeeded () {
     if (this.state.books.isLoaded || this.state.books.isFetching) {
-      return Promise.resolve();
+      return Promise.resolve()
     }
     this.state.books.isFetching = true
     return fetch(BooksURL, {mode: 'cors'}).then((response) => {
