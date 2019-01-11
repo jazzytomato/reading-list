@@ -12,22 +12,23 @@ export const store = {
     }
   },
   fetchBooksIfNeeded () {
-    if (!this.state.books.isLoaded && !this.state.books.isFetching) {
-      this.state.books.isFetching = true
-      fetch(BooksURL, {mode: 'cors'}).then((response) => {
-        return response.json()
-      }).then((data) => {
-        this.state.books = {
-          isFetching: false,
-          isLoaded: true,
-          isError: false,
-          data: data.books
-        }
-        this.state.error = false
-      }).catch((error) => {
-        console.error(error)
-        this.state.books.isError = true
-      })
+    if (this.state.books.isLoaded || this.state.books.isFetching) {
+      return Promise.resolve();
     }
+    this.state.books.isFetching = true
+    return fetch(BooksURL, {mode: 'cors'}).then((response) => {
+      return response.json()
+    }).then((data) => {
+      this.state.books = {
+        isFetching: false,
+        isLoaded: true,
+        isError: false,
+        data: data.books
+      }
+      this.state.error = false
+    }).catch((error) => {
+      console.error(error)
+      this.state.books.isError = true
+    })
   }
 }
