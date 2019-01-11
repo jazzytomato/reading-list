@@ -17,6 +17,12 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - run: sudo su -c 'echo "deb http://deb.debian.org/debian jessie-backports main" >> /etc/apt/sources.list'
+      - run: |
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo apt-get update
+          sudo apt install -t jessie-backports  openjdk-8-jre-headless ca-certificates-java
+
       - checkout
 
       # Download and cache dependencies

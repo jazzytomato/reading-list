@@ -3,7 +3,7 @@
 > A simple Vuejs project that fetches some book data and displays it
 
 ## Notes
-- Cross origin requests not allowed on the given url https://priceless-mestorf-883378.netlify.com/fe-data-2.json , also the JSON was malformated so I used http://www.mocky.io/v2/5c30dff23000006800e77ace instead.
+- Cross origin requests not allowed on the given url https://priceless-mestorf-883378.netlify.com/fe-data-2.json , also the JSON was malformated so I used https://www.mocky.io/v2/5c30dff23000006800e77ace instead.
 - It may look like the data is being fetch every time because of the way lorem pixel works, but it isn't. The browser will reload the image beause the image come from lorempixel which returns a different image every time with response headers `Cache-Control: no-cache, no-store`, e.g. https://lorempixel.com/640/480/?6de7a88ea5ab
 - I used Tachyons for fast css prototyping
 - I wrote some e2e and unit tests but ran out of time, so it is not well tested
