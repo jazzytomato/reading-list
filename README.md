@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jazzytomato/reading-list.svg?style=svg)](https://circleci.com/gh/jazzytomato/reading-list)
+
 # readinglist
 
 > A simple Vuejs project that fetches some book data and displays it
