@@ -3,7 +3,9 @@
 > A simple Vuejs project that fetches some book data and displays it
 
 ## Notes
-It may look like the data is being fetch every time because of the way lorem pixel works, but it isn't. The browser will reload the image beause the image come from lorempixel which returns a different image every time with response headers `Cache-Control: no-cache, no-store`, e.g. https://lorempixel.com/640/480/?6de7a88ea5ab
+- It may look like the data is being fetch every time because of the way lorem pixel works, but it isn't. The browser will reload the image beause the image come from lorempixel which returns a different image every time with response headers `Cache-Control: no-cache, no-store`, e.g. https://lorempixel.com/640/480/?6de7a88ea5ab
+
+- I used Tachyons for fast css prototyping
 
 ## Build Setup
 

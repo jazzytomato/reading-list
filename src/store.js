@@ -30,5 +30,11 @@ export const store = {
       console.error(error)
       this.state.books.isError = true
     })
+  },
+  getBookById (id) {
+    return this.state.books.data.find((book) => book.id === id)
+  },
+  getBooksByAuthor (author) {
+    return this.state.books.data.filter((book) => book.author === author)
   }
 }
