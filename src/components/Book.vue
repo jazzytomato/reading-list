@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="book">
     <div v-if="!book">
       <div class="flex flex-column justify-center items-center">
         <Loader/>
@@ -14,6 +14,7 @@
       <h3 class="f5 f4-ns fw3 mb0 black-90">{{book.title}}</h3>
       <h3 class="f6 f5 fw4 mt2 black-60">{{book.author}}</h3>
       <p>ISBN {{book.isbn}}</p>
+      <p>{{book.description}}</p>
       <router-link
         class="f6 f5 fw4 mt2 black-60 underline"
         :to="{name: 'BookList'}"
@@ -39,15 +40,25 @@ export default {
   components: {Loader, BookListItem},
   mounted () {
     store.fetchBooksIfNeeded().then(() => {
-      this.book = this.store.getBookById(this.$route.params.id)
+      this.setBookById(this.$route.params.id)
       if (this.book === undefined) {
         this.$router.push({ name: 'NotFound' })
       }
     })
   },
+  methods: {
+    setBookById (id) {
+      this.book = this.store.getBookById(id)
+    }
+  },
   computed: {
     booksByTheSameAuthor () {
       return this.store.getBooksByAuthor(this.book.author).filter(book => book.id !== this.book.id)
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.setBookById(to.params.id)
     }
   }
 }
